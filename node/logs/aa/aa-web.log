@@ -1,0 +1,19 @@
+2020-11-28 13:44:07,089 ERROR 1532 [-/::1/-/4ms GET /] nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code_workspace\work_bongbong\egg-example\public\index.html'
+    at Object.openSync (fs.js:440:3)
+    at Object.readFileSync (fs.js:342:35)
+    at HomeController.index (D:\code_workspace\work_bongbong\egg-example\app\controller\home.js:18:19)
+    at Object.callFn (D:\code_workspace\work_bongbong\egg-example\node_modules\egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (D:\code_workspace\work_bongbong\egg-example\node_modules\egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (D:\code_workspace\work_bongbong\egg-example\node_modules\@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (D:\code_workspace\work_bongbong\egg-example\node_modules\@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (D:\code_workspace\work_bongbong\egg-example\node_modules\koa-compose\index.js:44:32)
+    at next (D:\code_workspace\work_bongbong\egg-example\node_modules\koa-compose\index.js:45:18)
+    at D:\code_workspace\work_bongbong\egg-example\node_modules\@eggjs\router\lib\router.js:190:18
+errno: -4058
+syscall: "open"
+code: "ENOENT"
+path: "D:\\code_workspace\\work_bongbong\\egg-example\\public\\index.html"
+name: "ENOENTError"
+pid: 1532
+hostname: DESKTOP-3URLMQS
+

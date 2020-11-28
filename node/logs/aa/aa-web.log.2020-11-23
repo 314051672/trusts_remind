@@ -1,0 +1,90 @@
+2020-11-22 22:02:12,900 ERROR 5852 [-/::1/-/12ms GET /user?uid=11] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' `response` = '[object Object]', `app` = '[object Object]', `req` = '[object Obj' at line 1
+    at Query.Sequence._packetToError (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:309:12)
+    --------------------
+    at Pool.query (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\Pool.js:199:23)
+    at D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\lib\client.js:38:20)
+    at RDSClient.proto.query (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (D:\code_workspace\work_bongbong\egg-example\node_modules\co\index.js:65:19)
+    at D:\code_workspace\work_bongbong\egg-example\node_modules\co\index.js:54:5
+    sql: SELECT * FROM `users` WHERE `uid` = `request` = '[object Object]', `response` = '[object Object]', `app` = '[object Object]', `req` = '[object Object]', `res` = '[object Object]', `originalUrl` = '/user?uid=11', `starttime` = 1606053732879, `matched` = '[object Object]', `_matchedRoute` = '/user', `captures` = , `params` = '[object Object]', `routerName` = NULL, `routerPath` = '/user', `securityOptions` = '[object Object]', `nonce` = 'G4tsAit9hWWPGsDY', `csrf` = 'j4KbhAGw-CHT5-ux5pFtmQobN3plxZodnh3k', `acceptJSONP` = false, `locale` = 'en-us', `view` = '[object Object]', `cookies` = '[object Object]', `httpclient` = '[object Object]', `router` = '[object Object]', `helper` = '[object Object]', `logger` = '[object Object]', `coreLogger` = '[object Object]', `locals` = '[object Object]', `state` = '[object Object]', `acceptJSON` = false, `queries` = '[object Object]', `accept` = '[object Object]', `ip` = '::1', `realStatus` = 404, `status` = 404, `message` = 'Not Found', `body` = NULL, `length` = NULL, `type` = '', `lastModified` = NULL, `etag` = '', `headerSent` = false, `writable` = true, `querystring` = 'uid=11', `idempotent` = true, `socket` = '[object Object]', `search` = '?uid=11', `method` = 'GET', `query` = '[object Object]', `path` = '/user', `url` = '/user?uid=11', `origin` = 'http://localhost:7001', `href` = 'http://localhost:7001/user?uid=11', `subdomains` = , `protocol` = 'http', `host` = 'localhost:7001', `hostname` = 'localhost', `URL` = 'http://localhost:7001/user?uid=11', `header` = '[object Object]', `headers` = '[object Object]', `secure` = false, `stale` = true, `fresh` = false, `ips` =  LIMIT 0, 1
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' `response` = '[object Object]', `app` = '[object Object]', `req` = '[object Obj' at line 1"
+sqlState: "42000"
+index: 0
+sql: "SELECT * FROM `users` WHERE `uid` = `request` = '[object Object]', `response` = '[object Object]', `app` = '[object Object]', `req` = '[object Object]', `res` = '[object Object]', `originalUrl` = '/user?uid=11', `starttime` = 1606053732879, `matched` = '[object Object]', `_matchedRoute` = '/user', `captures` = , `params` = '[object Object]', `routerName` = NULL, `routerPath` = '/user', `securityOptions` = '[object Object]', `nonce` = 'G4tsAit9hWWPGsDY', `csrf` = 'j4KbhAGw-CHT5-ux5pFtmQobN3plxZodnh3k', `acceptJSONP` = false, `locale` = 'en-us', `view` = '[object Object]', `cookies` = '[object Object]', `httpclient` = '[object Object]', `router` = '[object Object]', `helper` = '[object Object]', `logger` = '[object Object]', `coreLogger` = '[object Object]', `locals` = '[object Object]', `state` = '[object Object]', `acceptJSON` = false, `queries` = '[object Object]', `accept` = '[object Object]', `ip` = '::1', `realStatus` = 404, `status` = 404, `message` = 'Not Found', `body` = NULL, `length` = NULL, `type` = '', `lastModified` = NULL, `etag` = '', `headerSent` = false, `writable` = true, `querystring` = 'uid=11', `idempotent` = true, `socket` = '[object Object]', `search` = '?uid=11', `method` = 'GET', `query` = '[object Object]', `path` = '/user', `url` = '/user?uid=11', `origin` = 'http://localhost:7001', `href` = 'http://localhost:7001/user?uid=11', `subdomains` = , `protocol` = 'http', `host` = 'localhost:7001', `hostname` = 'localhost', `URL` = 'http://localhost:7001/user?uid=11', `header` = '[object Object]', `headers` = '[object Object]', `secure` = false, `stale` = true, `fresh` = false, `ips` =  LIMIT 0, 1"
+name: "ER_PARSE_ERRORError"
+pid: 5852
+hostname: DESKTOP-3URLMQS
+
+2020-11-22 22:04:39,393 ERROR 8120 [-/::1/-/6ms GET /user?uid=11] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0, 1' at line 1
+    at Query.Sequence._packetToError (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:309:12)
+    --------------------
+    at Pool.query (D:\code_workspace\work_bongbong\egg-example\node_modules\mysql\lib\Pool.js:199:23)
+    at D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\node_modules\pify\index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\node_modules\pify\index.js:12:10)
+    at Pool.ret [as query] (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\node_modules\pify\index.js:56:34)
+    at RDSClient.proto._query (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\lib\client.js:38:20)
+    at RDSClient.proto.query (D:\code_workspace\work_bongbong\egg-example\node_modules\ali-rds\lib\operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (D:\code_workspace\work_bongbong\egg-example\node_modules\co\index.js:65:19)
+    at D:\code_workspace\work_bongbong\egg-example\node_modules\co\index.js:54:5
+    sql: SELECT * FROM `users` WHERE `uid` =  LIMIT 0, 1
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0, 1' at line 1"
+sqlState: "42000"
+index: 0
+sql: "SELECT * FROM `users` WHERE `uid` =  LIMIT 0, 1"
+name: "ER_PARSE_ERRORError"
+pid: 8120
+hostname: DESKTOP-3URLMQS
+
+2020-11-23 13:58:19,816 ERROR 956 [-/::1/-/9ms GET /user?uid=11&password=12] nodejs.TypeError: The "string" argument must be one of type string, Buffer, or ArrayBuffer. Received type undefined
+    at Function.byteLength (buffer.js:705:11)
+    at respond (D:\code_workspace\work_bongbong\egg-example\node_modules\koa\lib\application.js:272:25)
+    at handleResponse (D:\code_workspace\work_bongbong\egg-example\node_modules\koa\lib\application.js:166:34)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+code: "ERR_INVALID_ARG_TYPE"
+pid: 956
+hostname: DESKTOP-3URLMQS
+
+2020-11-23 15:34:23,525 ERROR 12572 [-/::1/-/7ms GET /user?uid=112&password=1] nodejs.TypeError: Cannot read property 'password' of null
+    at UserController.login (D:\code_workspace\work_bongbong\egg-example\app\controller\user.js:16:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async D:\code_workspace\work_bongbong\egg-example\node_modules\egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code_workspace\work_bongbong\egg-example\node_modules\egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code_workspace\work_bongbong\egg-example\node_modules\egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code_workspace\work_bongbong\egg-example\node_modules\egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code_workspace\work_bongbong\egg-example\node_modules\egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code_workspace\work_bongbong\egg-example\node_modules\koa-session\index.js:41:7)
+    at async bodyParser (D:\code_workspace\work_bongbong\egg-example\node_modules\koa-bodyparser\index.js:95:5)
+    at async D:\code_workspace\work_bongbong\egg-example\node_modules\koa-static-cache\index.js:41:56
+
+pid: 12572
+hostname: DESKTOP-3URLMQS
+
